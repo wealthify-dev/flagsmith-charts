@@ -33,22 +33,22 @@ spec:
     spec:
       {{- if .Values.api.affinity }}
       affinity:
-{{ toYaml .Values.api.affinity | indent 4 }}
+{{ toYaml .Values.api.affinity | indent 6 }}
       {{- end }}
       {{- if .Values.api.nodeSelector }}
       nodeSelector:
-{{ toYaml .Values.api.nodeSelector | indent 4 }}
+{{ toYaml .Values.api.nodeSelector | indent 6 }}
       {{- end }}
       {{- if .Values.api.tolerations }}
       tolerations:
-{{ toYaml .Values.api.tolerations | indent 4 }}
+{{ toYaml .Values.api.tolerations | indent 6 }}
       {{- end }}
       {{- if .Values.api.schedulerName }}
       schedulerName: "{{ .Values.api.schedulerName }}"
       {{- end }}
       {{- if .Values.api.image.imagePullSecrets }}
       imagePullSecrets:
-{{ toYaml .Values.api.image.imagePullSecrets | indent 4 }}
+{{ toYaml .Values.api.image.imagePullSecrets | indent 6 }}
       {{- end }}
       securityContext:
         {{- $securityContext := .Values.api.podSecurityContext | default (dict) | deepCopy }}
